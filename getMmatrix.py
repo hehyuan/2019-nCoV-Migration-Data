@@ -26,8 +26,8 @@ if __name__ == "__main__":
     cityIndex = dict()
     for i, city in enumerate(list(citys.keys())):
         cityIndex[city] = i
-    begin = datetime.date(2019,12,31)#开始日期
-    end = datetime.date(2020,1,1)# 结束日期
+    begin = datetime.date(2020,2,1)#开始日期
+    end = datetime.date(2020,2,3)# 结束日期
     Tensor = dict()
     for i in range((end - begin).days + 1):
         date = begin + datetime.timedelta(days=i)
@@ -50,7 +50,7 @@ if __name__ == "__main__":
         print(date)
         print(matrix)
         Tensor[date] = matrix
-        # np.savetxt("M{}".format(time)+".csv",matrix,delimiter=',',fmt='%.4f')
+        np.savetxt("M{}".format(time)+".csv",matrix,delimiter=',',fmt='%.4f')
 
     # with open("dicOfMatrix.pickle",'wb') as f:
     #     pickle.dump(Tensor,f)
